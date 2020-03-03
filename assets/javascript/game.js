@@ -30,6 +30,16 @@ for(var i=0; i < numberOptions.length; i++){
 
     imageCrystalFour.attr('src', 'https://clipartmag.com/images/crystal-clipart-21.png');
 
-    
+    imageCrystalOne, imageCrystalTwo, imageCrystalThree, imageCrystalFour.attr('data-crystalvalue', numberOptions[i]);
+
+    $('#crystals').append(imageCrystalOne, imageCrystalTwo, imageCrystalThree, imageCrystalFour);
+
 }
+
+$(".crystal-image").on("click", function(){
+    var crystalvalue = ($(this).attr('data-crystalvalue'));
+    crystalvalue = parseInt(crystalvalue);
+
+    counter += crystalvalue;
+})
 
