@@ -6,14 +6,17 @@ var losses = 0;
 var numberOptions = [12, 5, 2, 9];//scores will be assigned to crystals at random and switched after every game
 
 
-initializeGame()
-
-    targetNumber = 1 + Math.floor(Math.random() * 120);
+function initializeGame(){
+    scoreCounter = 0;
+    wins = 0;
+    losses = 0;
+    targetNumber = Math.floor((Math.random() * 120)+ 19);
+    console.log(targetNumber)
+    $("#number-to-guess").text(targetNumber);
+}
 
     //initialize game again once scoreCounter=targetNumber or scoreCounter>=targetNumber
 
-
-$("#number-to-guess").text(targetNumber);
 
 for(var i=0; i < numberOptions.length; i++){
     
@@ -46,15 +49,19 @@ $(".crystal-image").on("click", function(){
     crystalvalue = parseInt(crystalvalue);
 
     scoreCounter += crystalvalue;
+    $('#total-score').text(scoreCounter); //have total score displayed, which is equal to the scoreCounter
 
     if (scoreCounter === targetNumber){
         wins++;
         $('#wins').text(wins);
+        initializeGame();
     }
 
     else if (scoreCounter >= targetNumber){
         losses++;
         $('#losses').text(losses);
+        initializeGame();
     }
 });
-//have total score displayed, which is equal to the scoreCounter
+
+//have values for crystals change after game is over (when scoreCounter === targetNumber || scoreCounter >= targetNumber)

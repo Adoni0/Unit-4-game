@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel='stylesheet' type="text/css" href="assets/css/style.css">
         <script type="text/javascript" src="assets/javascript/game.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,7 +17,7 @@
             </div>
 
             <div class="row">
-                <div class='col' id='instructions'>
+                <div class='col-sm-6' id='instructions'>
                     <p>You will be given a random number at the start of the game.</p>
                     <br>
                     <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
@@ -29,16 +30,14 @@
                 </div>
             </div>
 
-        
-        </div>
 
         <div class='row'>
-            <div class='col-sm-3'>
+            <div class='col-sm-5'>
 
-                <span id='#number-to-guess'></span>
+                <div id='#number-to-guess'></div>
 
             </div> 
-            <div class='col-sm-5'>
+            <div class='col-sm-3'>
                 <div id='wins'></div>
                 <div id='losses'></div>
             </div>
@@ -46,16 +45,19 @@
 
         <div class ='row'>
                 <div class='col'>
-                    <span id='crystals'></span>
+                    <div id='crystals'></div>
                 </div>
         </div>
 
         <div class ='row'>
             <div class='col' id='score-tally'>
-                <span id='total-score'></span>
+                <div id='total-score'></div>
             </div>
     </div>
 
+
+
+    </div>
 
     </body>
 </html>

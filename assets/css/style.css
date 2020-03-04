@@ -8,15 +8,21 @@ body{
 }
 
 .col-sm-3{
-    background-color: rgb(11, 158, 11);
+    background-color: rgb(138, 240, 226);
+    height: 100px;
+    width: 100px;
 }
 
 .col-sm-5{
-    background-color:lightblue;
+    background-color:green;
+    height: 200px;
+    width: 200px;
 }
 
 #score-tally{
-    background-color: lightseagreen;
+    background-color: rgb(11, 70, 158);
+    height: 100px;
+    width: 100px;
 }
 
 #game-title{
