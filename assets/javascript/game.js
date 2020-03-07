@@ -3,9 +3,7 @@ var targetNumber = 0;
 var scoreCounter = 0;
 var wins = 0;
 var losses = 0;
-var numberOptions = [12, 5, 2, 9];//scores will be assigned to crystals at random and switched after every game
 
-var random = Math.floor(Math.random() * 4);
 var crystal1 = randomInterval(1, 12);
 console.log(crystal1);
 var crystal2 = randomInterval(1, 12);
@@ -17,8 +15,6 @@ var crystal4 = randomInterval(1, 12);
 function randomInterval(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-
 
 
 function startGame(){
@@ -34,36 +30,38 @@ function startGame(){
         $('#total-score').text(scoreCounter += this.value);
     })
         
-        $('#crystal2').on('click', function(){
-            console.log('crystal1 clicked')
-            this.value = crystal2;
-            $('#total-score').text(scoreCounter += this.value);
-        })
+    $('#crystal2').on('click', function () {
+        console.log('crystal1 clicked')
+        this.value = crystal2;
+        $('#total-score').text(scoreCounter += this.value);
+    })
 
-            $('#crystal3').on('click', function(){
-                console.log('crystal1 clicked')
-                this.value = crystal3;
-                $('#total-score').text(scoreCounter += this.value);
-            })
+    $('#crystal3').on('click', function () {
+        console.log('crystal1 clicked')
+        this.value = crystal3;
+        $('#total-score').text(scoreCounter += this.value);
+    })
 
-                $('#crystal4').on('click', function(){
-                    console.log('crystal1 clicked')
-                    this.value = crystal4;
-                    $('#total-score').text(scoreCounter += this.value);
-                })
+    $('#crystal4').on('click', function () {
+        console.log('crystal1 clicked')
+        this.value = crystal4;
+        $('#total-score').text(scoreCounter += this.value);
+    })
 
-                $('.crystal').on('click', function(){
-                    if(scoreCounter === targetNumber){
-                        $('#result-text').text('You WIN!');
-                        $('#wins').text('Wins: '+ wins++);
-                        resetGame();
-                    }else if(scoreCounter > targetNumber){
-                        $('#result-text').text('You LOSE!');
-                        $('#losses').text(`Losses: ${losses++}`);
-                        resetGame();
-                    }
-                })
-    }
+    $('.crystal').on('click', function () {
+        if (scoreCounter === targetNumber) {
+            wins++;
+            $('#result-text').text('You WIN!');
+            $('#wins').text('Wins: ' + wins);
+            resetGame();
+        } else if (scoreCounter > targetNumber) {
+            losses++;
+            $('#result-text').text('You LOSE!');
+            $('#losses').text(`Losses: ${losses}`);
+            resetGame();
+        }
+    })
+}
 
 function resetGame(){
     crystal1 = randomInterval(1, 12);

@@ -1,5 +1,6 @@
 body{
-    background-image: url('../images/closeup-photo-of-purple-gemstones-1121123 (1).jpg');
+    background: url('../images/closeup-photo-of-purple-gemstones-1121123 (1).jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 #instructions{
@@ -47,4 +48,18 @@ body{
 
 h1{
     color: cornsilk;
+}
+
+#number-to-guess{
+    font-size: 30px;
+}
+
+#total-score{
+    font-size: 30px;
+}
+
+#wins-losses{
+    background-color: rgb(231, 83, 83);
+    margin-left: 5px;
+    margin-top: 5px;
 }
